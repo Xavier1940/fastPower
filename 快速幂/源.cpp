@@ -4,18 +4,18 @@ using namespace std;
 long long fastPower(long long base, long long power){
 	long long result = 1; 
 	while (power>0){
-		if (power & 1){                     //µÈ¼ÛÓÚ£ºpower % 2 == 1
-			result = result * base % 1000;  //Ö¸ÊýÎªÆæÊýÊ±£¬½«·ÖÀë³öÀ´µÄµ×ÊýÒ»´Î·½ÊÕ¼¯£¬½á¹û¶Ô1000È¡Ä££¬¼´È¡ºóÈýÎ»ÕûÊý
+		if (power & 1){                         //ç­‰ä»·äºŽï¼špower % 2 == 1
+			result = result * base % 1000;  //æŒ‡æ•°ä¸ºå¥‡æ•°æ—¶ï¼Œå°†åˆ†ç¦»å‡ºæ¥çš„åº•æ•°ä¸€æ¬¡æ–¹æ”¶é›†ï¼Œç»“æžœå¯¹1000å–æ¨¡ï¼Œå³å–åŽä¸‰ä½æ•´æ•°
 		}
-		power >>= 1;                        //µÈ¼ÛÓÚ£ºpower = power / 2;ÒòÎªÖ¸ÊýÎªÕûÊý£¬¿É½«power = power - 1;ºÍpower = power / 2;½øÐÐºÏ²¢
-		base = (base*base) % 1000;          //¸ù¾ÝÈ¡Ä£ÔËËã·¨Ôò£¬³ËÊýÏÈÈ¡Ä£ÔÙÏà³ËÔÙÈ¡Ä£¸ú×îÖÕ½á¹ûÈ¡Ä£½á¹ûÒ»ÖÂ
+		power >>= 1;                            //ç­‰ä»·äºŽï¼špower = power / 2;å› ä¸ºæŒ‡æ•°ä¸ºæ•´æ•°ï¼Œå¯å°†power = power - 1;å’Œpower = power / 2;è¿›è¡Œåˆå¹¶
+		base = (base*base) % 1000;              //æ ¹æ®å–æ¨¡è¿ç®—æ³•åˆ™ï¼Œä¹˜æ•°å…ˆå–æ¨¡å†ç›¸ä¹˜å†å–æ¨¡è·Ÿæœ€ç»ˆç»“æžœå–æ¨¡ç»“æžœä¸€è‡´
 	}
 	return result;
 }
 
 int main(){
-	long long base,power;                    //ÊäÈëµ×ÊýºÍÖ¸Êý
-	cin >> base>>power;
-	cout << fastPower(base, power) << endl;  //Êä³ö½á¹û
+	long long base,power;                    
+	cin >> base>>power;                      //è¾“å…¥åº•æ•°å’ŒæŒ‡æ•°
+	cout << fastPower(base, power) << endl;  //è¾“å‡ºç»“æžœ
 	return 0;
 }
